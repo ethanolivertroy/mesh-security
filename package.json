@@ -1,0 +1,28 @@
+{
+  "name": "mesh-security",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Security analysis toolkit for service mesh configurations",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean"
+  },
+  "keywords": [
+    "service-mesh",
+    "security",
+    "istio",
+    "consul",
+    "linkerd",
+    "compliance",
+    "nist",
+    "fedramp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

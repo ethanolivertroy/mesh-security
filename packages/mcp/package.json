@@ -1,0 +1,36 @@
+{
+  "name": "@mesh-security/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for mesh configuration security analysis",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "mesh-security-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "service-mesh",
+    "security",
+    "claude"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@mesh-security/core": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}

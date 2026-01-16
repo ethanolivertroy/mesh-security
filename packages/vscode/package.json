@@ -1,0 +1,106 @@
+{
+  "name": "mesh-security-vscode",
+  "displayName": "Mesh Security Analyzer",
+  "description": "Security analysis for Istio, Consul, and Linkerd service mesh configurations",
+  "version": "0.1.0",
+  "publisher": "mesh-security",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "service-mesh",
+    "security",
+    "istio",
+    "consul",
+    "linkerd",
+    "compliance",
+    "nist"
+  ],
+  "activationEvents": [
+    "onLanguage:yaml",
+    "onLanguage:json"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Mesh Security Analyzer",
+      "properties": {
+        "meshSecurity.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable mesh security analysis"
+        },
+        "meshSecurity.minSeverity": {
+          "type": "string",
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ],
+          "default": "low",
+          "description": "Minimum severity level to report"
+        },
+        "meshSecurity.frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "nist",
+              "fedramp"
+            ]
+          },
+          "default": [
+            "nist"
+          ],
+          "description": "Compliance frameworks to check against"
+        },
+        "meshSecurity.meshTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "istio",
+              "consul",
+              "linkerd"
+            ]
+          },
+          "default": [
+            "istio",
+            "consul",
+            "linkerd"
+          ],
+          "description": "Mesh types to analyze"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "meshSecurity.analyzeFile",
+        "title": "Mesh Security: Analyze Current File"
+      },
+      {
+        "command": "meshSecurity.analyzeWorkspace",
+        "title": "Mesh Security: Analyze Workspace"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run build",
+    "build": "tsc",
+    "watch": "tsc -watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@mesh-security/core": "workspace:*"
+  }
+}
