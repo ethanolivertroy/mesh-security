@@ -31,6 +31,6 @@
   "dependencies": {
     "@mesh-security/core": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.26.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.2.0"
   }
 }
