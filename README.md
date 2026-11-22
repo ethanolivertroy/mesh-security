@@ -1,5 +1,7 @@
 # Mesh Security Analyzer
 
+> **Project moved.** The service mesh analyzer, MCP server, VS Code extension, and sample configurations moved to [Open Control Tools](https://github.com/ethanolivertroy/open-ctrl-tools) under `mesh-security/`.
+
 A comprehensive security analysis toolkit for service mesh configurations (Istio, Consul, Linkerd) with NIST 800-53 compliance mapping.
 
 ## Features
